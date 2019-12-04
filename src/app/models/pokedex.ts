@@ -19,5 +19,5 @@ export interface Pokedex {
   count: number;
   next: string;
   previous?: any;
-  results: Result[];
+  results: {[key: string]: Result};
 }

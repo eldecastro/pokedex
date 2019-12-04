@@ -101,8 +101,9 @@ export class PokemonListComponent implements OnInit {
         ]
       }
     ];
-    console.log(this.pokedex);
-    test[]:this.pokedex.
+
+    let testss = this.pokedex.results;
+    console.log(this.pokedex.results[1]);
   }
 
 }
