@@ -1,3 +1,7 @@
 <button>Previous</button> <button>Next</button>
 
-<mat-card>asdkajsdlakj</mat-card>
+<ul *ngFor="let result of pokedex.results">
+  <li>{{ result.name }}</li>
+  <li>shit</li>
+</ul>
+
