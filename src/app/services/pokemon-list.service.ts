@@ -9,7 +9,8 @@ import { Pokedex } from '../models/pokedex';
 })
 export class PokemonListService {
 
-  pokemonListUrl = 'https://pokeapi.co/api/v2/pokemon';
+  // pokemonListUrl = 'https://pokeapi.co/api/v2/pokemon';
+  pokemonListUrl = 'https://pokeapi.co/api/v2/pokemon-species/?offset=00&limit=807';
 
 constructor(private http: HttpClient) { }
 

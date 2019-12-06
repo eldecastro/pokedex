@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
       BrowserAnimationsModule,
       MatToolbarModule,
       HttpClientModule,
-      MatCardModule
+      MatCardModule,
+      MatGridListModule
    ],
    providers: [],
    bootstrap: [
