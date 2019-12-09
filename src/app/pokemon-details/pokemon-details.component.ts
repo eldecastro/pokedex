@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { PokemonDetails } from './../models/pokemonDetails';
+import { PokemonService } from './../services/pokemon.service';
+import { Pokemon } from './../models/pokemon';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -6,10 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-details.component.css']
 })
 export class PokemonDetailsComponent implements OnInit {
+  pokemon: Pokemon;
+  pokemonDetails: PokemonDetails;
 
-  constructor() { }
+  constructor(
+    private pokemonService: PokemonService,
+    private dialogRef: MatDialogRef<PokemonDetailsComponent>,
+    @Inject(MAT_DIALOG_DATA) data) {
+
+    this.pokemon = data.pokemon;
+    }
 
   ngOnInit() {
+    this.pokemonService.getPokemonDetails(this.pokemon.getPokemonDetailsUrl()).subscribe(details => {
+      // this.pokemonDetails = details;
+      console.log(details);
+
+  });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
 }

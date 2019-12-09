@@ -10,6 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import {MatDialogModule} from '@angular/material';
 
 @NgModule({
    declarations: [
@@ -17,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
       PokemonListComponent,
       PokemonDetailsComponent,
       NavComponent,
+      PokemonCardComponent,
    ],
    imports: [
       BrowserModule,
@@ -24,11 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
       MatToolbarModule,
       HttpClientModule,
       MatCardModule,
-      MatGridListModule
+      MatGridListModule,
+      MatDialogModule
    ],
    providers: [],
    bootstrap: [
       AppComponent
-   ]
+   ],
+   entryComponents: [PokemonDetailsComponent]
 })
 export class AppModule { }

@@ -1,3 +1,12 @@
-<p>
-  pokemon-details works!
-</p>
+<div class="test">
+    <h2 mat-dialog-title>{{ pokemon.name | uppercase }}</h2>
+
+    <mat-dialog-content>
+    <img src="{{ pokemon.getPokemonPortraitUrl() }}" alt="">
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button class="mat-raised-button"(click)="close()">Close</button>
+    </mat-dialog-actions>
+</div>
+
