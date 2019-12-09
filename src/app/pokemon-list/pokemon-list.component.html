@@ -1,8 +1,8 @@
   <mat-grid-list cols="4">
     <mat-grid-tile *ngFor="let pokemon of pokedex">
-      <mat-card class="example-card"> {{ pokemon.name }}
-        {{ pokemon.id }}
-        <img src="{{ pokemon.pokemonSpriteUrl }}" alt="">
+      <mat-card class="example-card"> {{ pokemon.getName() }}
+        {{ pokemon.getID() }}
+        <img src="{{ pokemon.getPokemonSpriteUrl() }}" alt="">
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
