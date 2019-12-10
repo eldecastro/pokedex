@@ -12,6 +12,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import {MatDialogModule} from '@angular/material';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
    declarations: [
@@ -20,6 +22,7 @@ import {MatDialogModule} from '@angular/material';
       PokemonDetailsComponent,
       NavComponent,
       PokemonCardComponent,
+      FilterPipe
    ],
    imports: [
       BrowserModule,
@@ -28,12 +31,15 @@ import {MatDialogModule} from '@angular/material';
       HttpClientModule,
       MatCardModule,
       MatGridListModule,
-      MatDialogModule
+      MatDialogModule,
+      FormsModule
    ],
    providers: [],
    bootstrap: [
       AppComponent
    ],
-   entryComponents: [PokemonDetailsComponent]
+   entryComponents: [
+      PokemonDetailsComponent
+   ]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
+  <input [(ngModel)]="searchText" placeholder="search text goes here">
   <mat-grid-list cols="4">
-    <mat-grid-tile *ngFor="let pokemon of pokedex">
+    <mat-grid-tile *ngFor="let pokemon of pokedex | filter: searchText">
       <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
     </mat-grid-tile>
   </mat-grid-list>
