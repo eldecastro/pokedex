@@ -1,6 +1,9 @@
   <input [(ngModel)]="searchText" placeholder="search text goes here">
+  <select class="form-control" [(ngModel)]="sel" name="sel">
+      <option *ngFor="let type of typeSelect" [ngValue]="type">{{type}}</option>
+  </select>
   <mat-grid-list cols="4">
-    <mat-grid-tile *ngFor="let pokemon of pokedex | filter: searchText">
+    <mat-grid-tile *ngFor="let pokemon of pokedex | filter: searchText | type: sel">
       <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
     </mat-grid-tile>
   </mat-grid-list>

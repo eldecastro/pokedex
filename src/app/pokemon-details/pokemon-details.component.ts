@@ -22,12 +22,8 @@ export class PokemonDetailsComponent implements OnInit {
     }
 
   ngOnInit() {
-  //   this.pokemonService.getPokemonDetails(this.pokemon.getPokemonDetailsUrl()).subscribe(details => {
-  //     this.pokemonDetails = details;
-  //     console.log(details);
 
-  // });
-    console.log(this.pokemon.getType());
+    console.log(this.pokemon.typeFilter);
 
   }
 

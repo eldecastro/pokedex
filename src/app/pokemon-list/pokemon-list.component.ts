@@ -10,7 +10,12 @@ import { Pokemon } from '../models/pokemon';
 
 
 export class PokemonListComponent implements OnInit {
+  typeSelect = ['Fire', 'Water', 'Grass', 'Flying', 'Dark', 'Ghost', 'Dragon', 'Psychic',
+                'Fairy', 'Fighting', 'Normal', 'Poison', 'Ground', 'Rock', 'Bug', 'Steel',
+                'Electric', 'Ice'];
   pokedex: Pokemon[] = [];
+  searchText: string;
+  sel: string;
 
 
   constructor(private pokemonListService: PokemonListService) { }

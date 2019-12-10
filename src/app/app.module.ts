@@ -14,6 +14,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import {MatDialogModule} from '@angular/material';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { TypePipe } from './type.pipe';
 
 @NgModule({
    declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
       PokemonDetailsComponent,
       NavComponent,
       PokemonCardComponent,
-      FilterPipe
+      FilterPipe,
+      TypePipe
    ],
    imports: [
       BrowserModule,

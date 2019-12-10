@@ -12,6 +12,7 @@ export class Pokemon {
   private pokemonSpriteUrl: string;
   height: number;
   weight: number;
+  typeFilter = '';
   private order: any;
 
 
@@ -52,11 +53,12 @@ export class Pokemon {
   getOrder(): number {
     return this.order;
   }
-  setDetails(details: PokemonDetails){
+  setDetails(details: PokemonDetails) {
     this.height = details.height;
     this.weight = details.weight;
     details.types.forEach(type => {
       this.types.push(type.type.name);
+      this.typeFilter += type.type.name;
     });
   }
 }
