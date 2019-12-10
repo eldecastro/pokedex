@@ -1,8 +1,14 @@
 <div class="test">
-    <h2 mat-dialog-title>{{ pokemon.name | uppercase }}</h2>
+    <h2 mat-dialog-title>{{ pokemon.getID() }} {{ pokemon.getName() | uppercase }}</h2>
 
     <mat-dialog-content>
-    <img src="{{ pokemon.getPokemonPortraitUrl() }}" alt="">
+    <img height="300px" width="300px" src="{{ pokemon.getPokemonPortraitUrl() }}" alt="">
+      <div>
+          Types
+          <p *ngFor="let type of pokemon.getType()">
+            {{ type | uppercase }}
+          </p>
+      </div>
     </mat-dialog-content>
 
     <mat-dialog-actions>

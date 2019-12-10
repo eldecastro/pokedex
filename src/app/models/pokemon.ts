@@ -1,3 +1,5 @@
+import { PokemonDetails } from './pokemonDetails';
+
 export class Pokemon {
   static pokemonCounter = 0;
   static pokemonApi = '';
@@ -8,6 +10,8 @@ export class Pokemon {
   private pokemonDetailsUrl: string;
   private pokemonPortraitUrl: string;
   private pokemonSpriteUrl: string;
+  private height: number;
+  private weight: number;
   private order: any;
 
 
@@ -33,8 +37,8 @@ export class Pokemon {
   getPokemonPortraitUrl(): string {
     return this.pokemonPortraitUrl;
   }
-  setType(type: string) {
-    this.types.push(type);
+  getType(): string [] {
+    return this.types;
   }
   getPokemonDetailsUrl(): string {
     return this.pokemonDetailsUrl;
@@ -47,5 +51,12 @@ export class Pokemon {
   }
   getOrder(): number {
     return this.order;
+  }
+  setDetails(details: PokemonDetails){
+    this.height = details.height;
+    this.weight = details.weight;
+    details.types.forEach(type => {
+      this.types.push(type.type.name);
+    });
   }
 }

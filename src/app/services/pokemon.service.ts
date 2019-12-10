@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { PokemonDetails } from '../models/pokemonDetails';
 
@@ -11,7 +12,7 @@ export class PokemonService {
 constructor(private http: HttpClient) { }
 
 getPokemonDetails(url: string): Observable<PokemonDetails> {
-  return this.http.get<PokemonDetails>(url);
+  return this.http.get<PokemonDetails>(url).pipe();
 }
 
 }

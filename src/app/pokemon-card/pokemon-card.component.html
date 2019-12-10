@@ -1,5 +1,7 @@
 <mat-card class="example-card" (click)="openDialog($event)"> {{ pokemon.getName() | titlecase }}
-        {{ pokemon.getID() }}
-        <img src="{{ pokemon.getPokemonSpriteUrl() }}" alt="">
+  <div>
+    {{ pokemon.getID() }}
+    <img width="200px" src="{{ pokemon.getPokemonSpriteUrl() }}" alt="">
+  </div>
 </mat-card>
 

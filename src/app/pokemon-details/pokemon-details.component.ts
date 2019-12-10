@@ -14,7 +14,7 @@ export class PokemonDetailsComponent implements OnInit {
   pokemonDetails: PokemonDetails;
 
   constructor(
-    private pokemonService: PokemonService,
+    // private pokemonService: PokemonService,
     private dialogRef: MatDialogRef<PokemonDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
 
@@ -22,11 +22,13 @@ export class PokemonDetailsComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.pokemonService.getPokemonDetails(this.pokemon.getPokemonDetailsUrl()).subscribe(details => {
-      // this.pokemonDetails = details;
-      console.log(details);
+  //   this.pokemonService.getPokemonDetails(this.pokemon.getPokemonDetailsUrl()).subscribe(details => {
+  //     this.pokemonDetails = details;
+  //     console.log(details);
 
-  });
+  // });
+    console.log(this.pokemon.getType());
+
   }
 
   close() {
