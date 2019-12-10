@@ -2,7 +2,7 @@
     <h2 mat-dialog-title>{{ pokemon.getID() }} {{ pokemon.getName() | uppercase }}</h2>
 
     <mat-dialog-content>
-    <img height="300px" width="300px" src="{{ pokemon.getPokemonPortraitUrl() }}" alt="">
+    <img height="400px" width="400px" src="{{ pokemon.getPokemonPortraitUrl() }}" alt="">
       <div>
           Types
           <p *ngFor="let type of pokemon.getType()">
