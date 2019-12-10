@@ -10,8 +10,8 @@ export class Pokemon {
   private pokemonDetailsUrl: string;
   private pokemonPortraitUrl: string;
   private pokemonSpriteUrl: string;
-  private height: number;
-  private weight: number;
+  height: number;
+  weight: number;
   private order: any;
 
 

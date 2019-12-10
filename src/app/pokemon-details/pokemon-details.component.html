@@ -4,6 +4,8 @@
     <mat-dialog-content>
     <img height="400px" width="400px" src="{{ pokemon.getPokemonPortraitUrl() }}" alt="">
       <div>
+          Height : {{ pokemon.weight }}<br>
+          Weight : {{ pokemon.height }}<br><br>
           Types
           <p *ngFor="let type of pokemon.getType()">
             {{ type | uppercase }}
