@@ -16,8 +16,6 @@ export class PokemonCardComponent implements OnInit {
 
   ngOnInit() {
     this.pokemonService.getPokemonDetails(this.pokemon.getPokemonDetailsUrl()).subscribe(details => {
-      // this.pokemonDetails = details;
-      // console.log(details);
       this.pokemon.setDetails(details);
   });
   }

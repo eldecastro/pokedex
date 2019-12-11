@@ -56,9 +56,12 @@ export class Pokemon {
   setDetails(details: PokemonDetails) {
     this.height = details.height;
     this.weight = details.weight;
-    details.types.forEach(type => {
-      this.types.push(type.type.name);
-      this.typeFilter += type.type.name;
-    });
+    if (this.typeFilter === '') {
+      details.types.forEach(type => {
+        this.types.push(type.type.name);
+        this.typeFilter += type.type.name;
+      });
+    }
+
   }
 }

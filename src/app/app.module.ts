@@ -7,14 +7,12 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
-import {MatDialogModule} from '@angular/material';
-import { FilterPipe } from './filter.pipe';
+import {MatDialogModule, MatSelectModule, MatGridListModule, MatCardModule, MatInputModule} from '@angular/material';
+import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { TypePipe } from './type.pipe';
+import { TypePipe } from './pipes/type.pipe';
 
 @NgModule({
    declarations: [
@@ -34,7 +32,9 @@ import { TypePipe } from './type.pipe';
       MatCardModule,
       MatGridListModule,
       MatDialogModule,
-      FormsModule
+      FormsModule,
+      MatSelectModule,
+      MatInputModule
    ],
    providers: [],
    bootstrap: [

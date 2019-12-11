@@ -22,10 +22,6 @@ constructor(private http: HttpClient) { }
   getPokedex(): Observable<Pokedex> {
     return this.http.get<Pokedex>(this.pokemonBaseUrl + this.getAllParam);
   }
-  getPokemonDetails(url: string): Observable<PokemonDetails> {
-    return this.http.get<PokemonDetails>(url);
-  }
-
   // setPokedex(data){
   //   this.pokedex = data;
   // }
