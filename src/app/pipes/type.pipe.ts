@@ -14,7 +14,7 @@ export class TypePipe implements PipeTransform {
       return pokemonList;
     }
     selectedType = selectedType.toLowerCase();
-    return selectedType ? pokemonList.filter(pokemon => pokemon.typeFilter.includes(selectedType)) : pokemonList;
+    return pokemonList.filter(pokemon => pokemon.typeFilter.includes(selectedType));
 }
 
 }
