@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { PokemonListService } from './../services/pokemon-list.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Pokemon } from '../models/pokemon';
 
 @Component({
@@ -11,16 +11,20 @@ import { Pokemon } from '../models/pokemon';
 
 
 export class PokemonListComponent implements OnInit {
-  typeSelect = ['Fire', 'Water', 'Grass', 'Flying', 'Dark', 'Ghost', 'Dragon', 'Psychic',
-                'Fairy', 'Fighting', 'Normal', 'Poison', 'Ground', 'Rock', 'Bug', 'Steel',
-                'Electric', 'Ice'];
   test: Observable<Pokemon[]>;
   pokedex: Pokemon[] = [];
   searchText: string;
-  sel: string;
+  selectedType: string;
 
 
   constructor(private pokemonListService: PokemonListService) { }
+
+  searchTextReceiver($event) {
+    this.searchText = $event;
+  }
+  typeFilterReceiver(name: string) {
+    this.selectedType = name;
+  }
 
   ngOnInit() {
     this.pokemonListService.getPokedex().subscribe(pokelist => {

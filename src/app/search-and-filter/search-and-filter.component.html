@@ -1,0 +1,13 @@
+<mat-form-field>
+    <input matInput type="text" placeholder="Search Pokemon" [(ngModel)]="searchText" (keyup)="emitSearchText()">
+    <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''; emitSearchText()">
+    X
+    </button>
+  </mat-form-field>
+<mat-form-field>
+    <mat-label>Types</mat-label>
+    <mat-select [(ngModel)]="selectedType" name="selectedType" (ngModelChange)="emitTypeFilter()">
+        <mat-option>ALL</mat-option>
+        <mat-option *ngFor="let type of typeSelect" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+</mat-form-field>

@@ -6,15 +6,15 @@ import { Pokemon } from '../models/pokemon';
 })
 export class TypePipe implements PipeTransform {
 
-  transform(pokemonList: Pokemon[], sel: string): Pokemon[] {
+  transform(pokemonList: Pokemon[], selectedType: string): Pokemon[] {
     if (!pokemonList) {
       return [];
      }
-    if (!sel) {
+    if (!selectedType) {
       return pokemonList;
     }
-    sel = sel.toLowerCase();
-    return sel ? pokemonList.filter(pokemon => pokemon.typeFilter.includes(sel)) : pokemonList;
+    selectedType = selectedType.toLowerCase();
+    return selectedType ? pokemonList.filter(pokemon => pokemon.typeFilter.includes(selectedType)) : pokemonList;
 }
 
 }

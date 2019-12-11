@@ -22,9 +22,6 @@ export class PokemonDetailsComponent implements OnInit {
     }
 
   ngOnInit() {
-
-    console.log(this.pokemon.typeFilter);
-
   }
 
   close() {

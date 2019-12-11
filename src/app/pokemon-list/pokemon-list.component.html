@@ -1,18 +1,6 @@
-  <mat-form-field>
-      <input matInput type="text" placeholder="Search Pokemon" [(ngModel)]="searchText">
-      <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
-      </button>
-    </mat-form-field>
-  <mat-form-field>
-      <mat-label>Types</mat-label>
-      <mat-select [(ngModel)]="sel" name="sel" style="display: inline;">
-          <mat-option>ALL</mat-option>
-          <mat-option *ngFor="let type of typeSelect" [value]="type">{{ type }}</mat-option>
-        </mat-select>
-  </mat-form-field>
-
+  <app-search-and-filter (searchTextEmitter)="searchTextReceiver($event)" (typeEmitter)="typeFilterReceiver($event)"></app-search-and-filter>
   <mat-grid-list cols="4">
-    <mat-grid-tile *ngFor="let pokemon of pokedex | filter: searchText | type: sel">
+    <mat-grid-tile *ngFor="let pokemon of pokedex | filter: searchText | type: selectedType">
       <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
     </mat-grid-tile>
   </mat-grid-list>

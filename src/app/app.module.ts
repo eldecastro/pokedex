@@ -13,6 +13,7 @@ import {MatDialogModule, MatSelectModule, MatGridListModule, MatCardModule, MatI
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { TypePipe } from './pipes/type.pipe';
+import { SearchAndFilterComponent } from './search-and-filter/search-and-filter.component';
 
 @NgModule({
    declarations: [
@@ -22,7 +23,8 @@ import { TypePipe } from './pipes/type.pipe';
       NavComponent,
       PokemonCardComponent,
       FilterPipe,
-      TypePipe
+      TypePipe,
+      SearchAndFilterComponent
    ],
    imports: [
       BrowserModule,
